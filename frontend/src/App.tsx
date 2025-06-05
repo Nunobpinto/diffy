@@ -9,7 +9,6 @@ import { FieldsView } from './features/fields/FieldsView';
 import { RequestView } from './features/requests/RequestView';
 import { closeInfoView, closeRequestView } from './features/selections/selectionsSlice';
 import { closeOverrideView } from './features/overrides/overrideSlice';
-import { DifferencesView } from './features/differences/DifferencesView';
 import { OverrideView } from './features/overrides/OverrideView';
 
 function App() {
@@ -26,13 +25,10 @@ function App() {
     <Grid item xs={3}>
       <EndpointsView/>
     </Grid>
-    <Grid item xs={4}>
+    <Grid item xs={true}>
       <FieldsView/>
     </Grid>
-    <Grid item xs={5}>
-      <DifferencesView/>
-    </Grid>
-
+    
     <Dialog
       fullWidth
       maxWidth='md'
@@ -44,8 +40,7 @@ function App() {
     </Dialog>
     
     <Dialog
-      fullWidth
-      maxWidth='md'
+      fullScreen
       open={requestIsOpen}
       onClose={()=>{dispatch(closeRequestView())}}>
       <DialogContent>
